@@ -26,6 +26,7 @@ app.get("/getMenus", (req, res) => {
   res.json(flattenedMenus);
 });
 
+/* organize menu */
 function organizeMenus() {
   const organizedMenus = [];
 
