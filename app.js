@@ -8,6 +8,9 @@ const port = 3000;
 app.use(cors());
 app.use(bodyParser.json());
 
+app.get("/", (req, res) => {
+  res.send({ message: "Welcome to the API" });
+});
 let menus = [];
 
 app.post("/addMenu", (req, res) => {
@@ -88,7 +91,6 @@ app.put("/editMenu", (req, res) => {
     res.status(404).json({ success: false, message: "Menu not found" });
   }
 });
-
 
 app.delete("/deleteMenu/:name", (req, res) => {
   const menuName = req.params.name;
